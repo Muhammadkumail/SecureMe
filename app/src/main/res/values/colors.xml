@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="blue">#3F51B5</color>
+    <color name="sapphire_blue">#2554C7</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlueIvy">#3090C7</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorSeeBlue">#C2DFFF</color>
+    <color name="colormidNightblue">#151B54</color>
+    <color name="colorflowerblue">#151B8D</color>
+    <color name="colorlightblue">#ADDFFF</color>
+</resources>

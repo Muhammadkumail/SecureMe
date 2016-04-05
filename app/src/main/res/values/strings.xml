@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Secure Me</string>
+
+    <string name="home_shopping_cart_button">Shopping Cart</string>
+    <string name="home_products_button">Products</string>
+    <string name="home_About_button">About us</string>
+    <string name="home_contact_button">Contact us</string>
+    <string name="home_user_login_button">User login</string>
+    <string name="home_terms_condition_button">Terms</string>
+    <string name="home_title">Secure - Me</string>
+
+    <!--Login/SignUp screens-->
+
+    <string name="prompt_phone">Phone</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="invalid_email">This email address is invalid</string>
+    <string name="invalid_password">Password is too short</string>
+    <string name="incorrect_password">Password is incorrect</string>
+    <string name="field_required">This field is required</string>
+
+</resources>
