@@ -36,7 +36,7 @@ public class GoogleMapActivity extends AppCompatActivity {
 
         try {
             map = ((MapFragment) getFragmentManager().findFragmentById(R.id.google_map_fragment)).getMap();
-            MarkerOptions k = new MarkerOptions().position(new LatLng(lat, lng)).title("Ned University").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_google_marker)).draggable(true).snippet("");
+            MarkerOptions k = new MarkerOptions().position(new LatLng(lat, lng)).title("Ned University").icon(BitmapDescriptorFactory.fromResource(R.drawable.gps)).draggable(true).snippet("");
             map.addMarker(k);
             map.setMapType(GoogleMap.MAP_TYPE_NORMAL);
             map.setMyLocationEnabled(true);

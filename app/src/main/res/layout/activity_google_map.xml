@@ -26,7 +26,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:src="@drawable/ic_refresh"
+
                         android:clickable="true"
                         android:onClick="onClick_Google_map"
 
@@ -37,7 +37,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginLeft="15dp"
-                        android:src="@drawable/ic_logo1"
+
                         />
                 </LinearLayout>
 
