@@ -105,6 +105,7 @@
                 android:layout_gravity="center"
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"
+                android:onClick="onClick_cameraSendNotification"
                 />
             <com.joooonho.SelectableRoundedImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -122,6 +123,7 @@
                 app:sriv_right_top_corner_radius="30dip"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
+                android:onClick="onClick_gpsSendNotification"
               />
 
         </LinearLayout>
@@ -150,6 +152,7 @@
                 app:sriv_right_top_corner_radius="30dip"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
+                android:onClick="onClick_alaramSendNotification"
                 />
             <com.joooonho.SelectableRoundedImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -167,6 +170,7 @@
                 app:sriv_right_top_corner_radius="00dip"
                 android:layout_gravity="center"
                 android:scaleType="fitXY"
+                android:onClick="onClick_switchSendNotification"
                 />
 
 
