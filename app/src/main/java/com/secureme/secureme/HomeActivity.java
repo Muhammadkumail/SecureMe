@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.apache.http.HttpResponse;
@@ -32,6 +33,8 @@ public class HomeActivity extends AppCompatActivity {
 
     Boolean flag = false;
     String mNotificationNumber = "";
+    private boolean isBulbOn = true;
+    ImageView iv;
 
 
     @Override
@@ -48,7 +51,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
-
     public void onClick_cameraSendNotification(View view) {
         mNotificationNumber = "camera";
         if (isNetworkConnected()) {
@@ -58,6 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         }
 
     }
+
     public void onClick_gpsSendNotification(View view) {
         mNotificationNumber = "gps";
         if (isNetworkConnected()) {
@@ -67,22 +70,63 @@ public class HomeActivity extends AppCompatActivity {
         }
 
     }
+
     public void onClick_alaramSendNotification(View view) {
-        mNotificationNumber = "alaram";
-        if (isNetworkConnected()) {
-            new asyncTask_sendNotification().execute();
+        iv = (ImageView) findViewById(R.id.home_imageView_alarm);
+
+        if (isBulbOn) {
+            iv.setImageResource((R.drawable.ic_alarm_on));
+
+
+            if (isNetworkConnected()) {
+                mNotificationNumber = "3";
+                new asyncTask_sendNotification().execute();
+            } else {
+                errorMessage("Please Check Internet connection");
+            }
+
+            isBulbOn = false;
         } else {
-            errorMessage("Please Check Internet connection");
+            iv.setImageResource((R.drawable.ic_alarm_off));
+
+            if (isNetworkConnected()) {
+                mNotificationNumber = "4";
+                new asyncTask_sendNotification().execute();
+            } else {
+                errorMessage("Please Check Internet connection");
+            }
+            isBulbOn = true;
+        }
+    }
+
+    public void onClick_switchSendNotification(View view) {
+
+        iv = (ImageView) findViewById(R.id.home_imageView_switch);
+
+        if (isBulbOn) {
+            iv.setImageResource((R.drawable.ic_bulb_on));
+
+
+            if (isNetworkConnected()) {
+                mNotificationNumber = "1";
+                new asyncTask_sendNotification().execute();
+            } else {
+                errorMessage("Please Check Internet connection");
+            }
+
+            isBulbOn = false;
+        } else {
+            iv.setImageResource((R.drawable.ic_bulb_off));
+
+            if (isNetworkConnected()) {
+                mNotificationNumber = "2";
+                new asyncTask_sendNotification().execute();
+            } else {
+                errorMessage("Please Check Internet connection");
+            }
+            isBulbOn = true;
         }
 
-    }
-    public void onClick_switchSendNotification(View view) {
-        mNotificationNumber = "switch";
-        if (isNetworkConnected()) {
-            new asyncTask_sendNotification().execute();
-        } else {
-            errorMessage("Please Check Internet connection");
-        }
 
     }
 
@@ -123,7 +167,7 @@ public class HomeActivity extends AppCompatActivity {
             progressDialog.dismiss();
             mNotificationNumber = "";
 
-            errorMessage("Your Message Has been sent");
+            errorMessage(s);
 
         }
     }

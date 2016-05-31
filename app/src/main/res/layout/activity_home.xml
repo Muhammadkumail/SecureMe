@@ -138,11 +138,11 @@
             >
             <com.joooonho.SelectableRoundedImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/image2"
+                android:id="@+id/home_imageView_alarm"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/alaram"
+                android:src="@drawable/ic_alarm_off"
                 android:scaleType="fitXY"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="2.5dp"
@@ -156,11 +156,11 @@
                 />
             <com.joooonho.SelectableRoundedImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/image3"
+                android:id="@+id/home_imageView_switch"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_switch"
+                android:src="@drawable/ic_bulb_off"
                 android:adjustViewBounds="true"
                 android:layout_marginLeft="2.5dp"
                 android:layout_marginRight="10dp"
