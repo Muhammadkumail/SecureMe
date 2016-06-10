@@ -33,7 +33,7 @@
         <activity android:name=".GoogleMapActivity"></activity>
 
 
-        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyBagYbzpr-y6y9rxzzgUyDDDs6hDFzTBtk"/>
+        <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyDia9BFzvSV0YYqJP8Mb59CmDsDVASzI9Y"/>
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
     </application>
 
