@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,6 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageView ivalarm;
     ImageView ivdoor;
     ImageView ivswith;
+    private Handler mHandler = new Handler();
 
 
     @Override
@@ -51,7 +53,7 @@ public class HomeActivity extends AppCompatActivity {
         ivdoor = (ImageView) findViewById(R.id.home_imageView_door);
         ivswith = (ImageView) findViewById(R.id.home_imageView_switch);
 
-        new asyncTask_getStatus().execute();
+       // new asyncTask_getStatus().execute();
 
 
     }
@@ -162,7 +164,7 @@ public class HomeActivity extends AppCompatActivity {
         mNotificationType = "gps";
         if (isNetworkConnected()) {
             new asyncTask_sendNotification().execute();
-            new asyncTask_getgps().execute();
+
         } else {
             errorMessage("Please Check Internet connection");
         }
@@ -205,12 +207,35 @@ public class HomeActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             progressDialog.dismiss();
-            mNotificationNumber = "";
+
+            try
+            {
+                if(mNotificationNumber=="7")
+                {
+                    mHandler.postDelayed(mUpdateTimeTask, 5000);
+                    mNotificationNumber = "";
+                }
+                else
+                {
+                    mNotificationNumber = "";
+                }
+            }
+           catch (Exception e)
+           {
+               mNotificationNumber = "";
+
+               e.fillInStackTrace();
+           }
 
             //errorMessage(s);
 
         }
     }
+    private Runnable mUpdateTimeTask = new Runnable() {
+        public void run() {
+            new asyncTask_getgps().execute();
+        }
+    };
 
     public String sendNotificationToWebServer(String mNotificationNumber, String mNotificationType) {
         String url = "http://friendsfashion.net/android/secureme/securemeNotification.php";
