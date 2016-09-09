@@ -4,10 +4,12 @@ import android.app.ProgressDialog;
 import android.content.Context;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,6 +44,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageView ivalarm;
     ImageView ivdoor;
     ImageView ivswith;
+    Context contex;
     private Handler mHandler = new Handler();
 
 
@@ -57,6 +60,25 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
+
+    public  void onclickLogout(View view)
+    {
+
+
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+
+        Intent mintent = new Intent(this, LoginActivity.class);
+        startActivity(mintent);
+        finish();
+        // /String  data = sharedPreferences.getString("key_userName", "") ;
+
+
+        //Toast.makeText(HomeActivity.this, data, Toast.LENGTH_SHORT).show();
+
+}
 
     private boolean isNetworkConnected() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

@@ -91,6 +91,10 @@
 
             <com.joooonho.SelectableRoundedImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                app:sriv_left_bottom_corner_radius="0dip"
+                app:sriv_left_top_corner_radius="30dip"
+                app:sriv_right_bottom_corner_radius="30dip"
+                app:sriv_right_top_corner_radius="0dip"
                 android:id="@+id/home_imageView_door"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
@@ -98,10 +102,7 @@
                 android:src="@drawable/ic_unlock"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="2.5dp"
-                app:sriv_left_bottom_corner_radius="0dip"
-                app:sriv_left_top_corner_radius="30dip"
-                app:sriv_right_bottom_corner_radius="30dip"
-                app:sriv_right_top_corner_radius="0dip"
+
                 android:layout_gravity="center"
                 android:scaleType="fitXY"
                 android:adjustViewBounds="true"
@@ -198,7 +199,9 @@
                 app:sriv_right_bottom_corner_radius="30dip"
                 app:sriv_right_top_corner_radius="0dip"
                 android:layout_gravity="center"
+                android:clickable="true"
                 android:adjustViewBounds="true"
+                android:onClick="onclickLogout"
                 />
             <com.joooonho.SelectableRoundedImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
